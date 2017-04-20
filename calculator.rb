@@ -1,6 +1,6 @@
 require 'sinatra'
-# require 'bigdecimal'
-# require 'bigdecimal/util'
+require 'bigdecimal'
+require 'bigdecimal/util'
 
 set :views, "views"
 
@@ -9,8 +9,8 @@ get '/' do
 end
 
 post '/' do
-    bill = params[:bill].to_f
-    num_people = params[:num_people].to_f
+    bill = params[:bill].to_d
+    num_people = params[:num_people].to_d
 
     tip = bill * 0.2
     total_bill = bill + tip
